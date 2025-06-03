@@ -12,3 +12,17 @@ services:
       - "127.0.0.1:5432:5432"
     volumes:
       - /data/bisque-testbed/pgdata:/var/lib/postgresql/data
+  bisque:
+    image: bisque:latest
+    container_name: bisque-prod
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+      - "27000:27000"
+    volumes:
+      - /data/bisque-testbed/bisque-data:/source/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      BISQUE_DBURL: "postgresql://bisque:bisque2022@postgres:5432/bisque"
