@@ -11,7 +11,7 @@ services:
     ports:
       - "127.0.0.1:5432:5432"
     volumes:
-      - /data/bisque-testbed/pgdata:/var/lib/postgresql/data
+      - /data/bisque-testbed/pgdata:/var/lib/postgresql/data # Ensure this path exists on the host
   bisque:
     image: bisque:latest
     container_name: bisque-prod
@@ -22,7 +22,8 @@ services:
       - "8080:8080"
       - "27000:27000"
     volumes:
-      - /data/bisque-testbed/bisque-data:/source/data
+      - /data/bisque-testbed/bisque-data:/source/data # Ensure this path exists on the host
       - /var/run/docker.sock:/var/run/docker.sock
+      - /home/charvi/bisque_workspace/Bisque_Module_Generator/Modules:/source/modules # Ensure this path exists on the host
     environment:
       BISQUE_DBURL: "postgresql://bisque:bisque2022@postgres:5432/bisque"

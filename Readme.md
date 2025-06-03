@@ -14,5 +14,15 @@ pass the correct bisque built image name on your system !
 u just only have to give the correct path on your system to database where it stores the bisque uploaded data ! 
 
 
+Adding Modules on the BisQue : 
+mount modules path as well , make sure path is correct  where your module is there on the system 
+next login bisque , go to module manager 
+paste : http://localhost:8080/engine_service and type load , 
+drag the module you build on left side or press register all 
+refresh bisque , 
+go to module section and see the module its registered 
+
+How to create modules : TODo : Follow another document 
+
 
 
