@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:10.22-alpine
+    container_name: bisque-postgres
+    environment:
+      POSTGRES_USER: bisque
+      POSTGRES_PASSWORD: bisque2022
+      POSTGRES_DB: bisque
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - /data/bisque-testbed/pgdata:/var/lib/postgresql/data
