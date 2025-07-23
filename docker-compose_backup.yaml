@@ -45,19 +45,6 @@ services:
     #   - "host.docker.internal:host-gateway"
       # - host
 
-  object-detection:
-    image: object-trial:latest
-    container_name: object-detection-container
-    stdin_open: true
-    tty: true
-    volumes:
-      - /home/charvi/bisque_workspace/Bisque_Module_Generator/Modules/object-detection-2:/app
-    networks:
-      - bisque-net
-    depends_on:
-      - vrl-4090.ece.ucsb.edu
-    # Can communicate with Bisque at vrl-4090.ece.ucsb.edu:8080 internally
-
 networks: 
   # host:
   bisque-net:
