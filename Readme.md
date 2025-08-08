@@ -1,50 +1,16 @@
-Install k3s on your system ( k3s server )
-install docker on your system 
+Hi, Thank you for contributing to BisQue !
 
+What is BisQue written in ? 
+write about the bisque databases ( we have postgres setup, MySQL by default ), 
 
-What I have done in docker compose : 
+How to deploy BisQue on local system ? ( 2 approaches using docker compose for small scale deployment , using k3s for large scale , for single used use only existing , for non devlopers directly use the existing branch )
 
-it itself setup the postgress path , 
-postgres image it will itself fetch but 
-u just only have to give correct path on your system where to store the postgress data
+How to core servers setup ? ( devpi servers setup , binaries setup , how to integrate with kyro we have to think ! )
 
-bisque image , first you have to build the workspace to get the bisque image 
-it itself setup the bisque path, 
-pass the correct bisque built image name on your system ! 
-u just only have to give the correct path on your system to database where it stores the bisque uploaded data ! 
+BisQue integrating the irods and upload the large amount of data with it ! 
 
+BisQue how to develop the modules ? , some common errors to debug the modules ! process of doing it ! , module chaining in progress 
 
-Adding Modules on the BisQue : 
-mount modules path as well , make sure path is correct  where your module is there on the system 
-next login bisque , go to module manager 
-paste : http://localhost:8080/engine_service and type load , 
-drag the module you build on left side or press register all 
-refresh bisque , 
-go to module section and see the module its registered 
+How to integrate the BQApi with the BisQue ? use it in Bisque modules 
 
-How to create modules : TODo : Follow another document 
-
-For only BisQue developers 
-mounting sourcecode to bisque : 
-u see in bisque image we have entrypoint , and bootstrap arguments that handles installing bisque sourcode 
-iinside contianer , but we change same source code by mounting externally then it throws errows 
-so instead we mount on some temp folder and then restart bisque service ! 
-
-whenever u change anything in Bisque image in developer mode , uncomment developer mode and then run : 
-docker exec -it bisque-prod /mnt/copy_and_restart.sh
-
-
-
-###### 9th july : goals : 
-module run with object detector repository and code and push on the module page , that argo dag I have
-to change and push on the 
-
-
-*** please check on your server if ufw rules are added or not for your port otherwise kubectl will not able to 
-ping on your machine , or go inside the bisque prod and test if u are able to ping or not ! 
-
-
-
-
-
-
+BisQue User documentations checkout here ! ( add all the links ) 
